@@ -1,0 +1,24 @@
+{{define "user/array.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+{{/*第一种方式*/}}
+{{range $i,$v := .}}
+  {{$i}}
+  {{$v}}
+<br>
+{{end}}
+
+<br>
+{{/*第二种方式*/}}
+{{range .}}
+    {{.}}
+{{end}}
+
+</body>
+</html>
+{{end}}

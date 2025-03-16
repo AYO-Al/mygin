@@ -1,0 +1,15 @@
+<!--使用多级目录时要指定define-->
+{{define "index/index.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyGin</title>
+    <!-- href中的/static由router.Static映射   -->
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+    <span class="index">{{.msg}}</span>
+</body>
+</html>
+{{end}}
