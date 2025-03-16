@@ -1,0 +1,17 @@
+{{define "user/user_add.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user_add</title>
+</head>
+<body>
+<form action="/user/add" method="post">
+    <p>用户名: <input type="text" name="username"></p>
+    <p>密码: <input type="text" name="password"></p>
+    <p>地址: <input type="text" name="addr"></p>
+    <button type="submit">提交</button>
+</form>
+</body>
+</html>
+{{end}}

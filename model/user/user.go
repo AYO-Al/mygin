@@ -1,6 +1,7 @@
 package user
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -29,4 +30,25 @@ func RenderStruct(context *gin.Context) {
 func RenderArray(context *gin.Context) {
 	userarr := []int{1, 2, 3}
 	context.HTML(http.StatusOK, "user/array.html", userarr)
+}
+
+// 参数绑定
+type User struct {
+	// json:"username
+	Username string `form:"username"`
+	Password int    `form:"password"`
+	Addr     string `form:"addr"`
+}
+
+func UserAdd(context *gin.Context) {
+	context.HTML(http.StatusOK, "user/user_add.html", "")
+}
+
+func UserToAdd(context *gin.Context) {
+	var user User
+	// 将参数绑定到结构体
+	err := context.ShouldBind(&user)
+	fmt.Println(err)
+	fmt.Println(user)
+	context.String(http.StatusOK, "user")
 }

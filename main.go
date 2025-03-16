@@ -24,6 +24,8 @@ func main() {
 	router.GET("/user", user.RenderStr)
 	router.GET("/user_struct", user.RenderStruct)
 	router.GET("/user_arr", user.RenderArray)
+	router.GET("/user_add", user.UserAdd)
+	router.POST("/user/add", user.UserToAdd)
 
 	router.Run(":8080")
 }
